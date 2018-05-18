@@ -1,0 +1,28 @@
+{%  extends 'common/base.html' %}
+
+{% block main_content %}
+
+    <div class="panel panel-default" id="panel-main">
+
+    {% for vehicle in vehicles %}
+        {% if vehicle.id == vehicle_id %}
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">{{ vehicle.model }}</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+
+            {% load crispy_forms_tags %}
+         <form id="add-vehicle-form" method="post"> {% csrf_token %}
+             {{ vehicleform|crispy }}
+             <input class="btn btn-success" id="add-vehicle-form-submit" type="submit">
+             <a class="btn btn-danger" id="go-back" href="/vehicles/">Go back</a>
+         </form>
+
+        {% endif %}
+    {% endfor %}
+
+    </div>
+{% endblock %}

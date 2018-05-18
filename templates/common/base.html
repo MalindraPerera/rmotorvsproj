@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Vehicles</title>
+
+        <link rel="stylesheet" href="{% static '/vehicles/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static '/vehicles/css/metisMenu.min.css' %}">
+        <link rel="stylesheet" href="{% static '/vehicles/css/sb-admin-2.css' %}">
+        <link rel="stylesheet" href="{% static '/vehicles/css/morris.css' %}">
+        <link rel="stylesheet" href="{% static '/vehicles/css/font-awesome.min.css' %}">
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    </head>
+
+    <body>
+
+        {% include 'common/wrapper.html' %}
+
+        <div id="page-wrapper">
+
+            {% block main_content %}
+            {% endblock %}
+
+        </div>
+        </div>
+
+        <script src="{% static '/vehicles/js/jquery.min.js' %}"></script>
+        <script src="{% static '/vehicles/js/bootstrap.min.js' %}"></script>
+        <script src="{% static '/vehicles/js/metisMenu.js' %}"></script>
+        <script src="{% static '/vehicles/js/raphael.min.js' %}"></script>
+        <script src="{% static '/vehicles/js/morris.min.js' %}"></script>
+        <script src="{% static '/vehicles/js/morris-data.js' %}"></script>
+        <script src="{% static '/vehicles/js/sb-admin-2.min.js' %}"></script>
+    </body>
+</html>
