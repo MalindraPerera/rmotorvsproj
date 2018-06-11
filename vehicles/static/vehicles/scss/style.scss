@@ -1,0 +1,240 @@
+$dark-grey: rgb(37,40,46);
+
+/*Needed to fix extra spacing at the end*/
+html, body {
+  height: 100%;
+}
+
+/*Navigation background color*/
+body {
+  background: #3b3b3b;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-kerning: auto;
+  font-stretch: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-variant-ligatures: normal;
+  font-weight: normal;
+}
+
+/*Top Navbar*/
+.navbar.navbar-default.navbar-static-top {
+  background: #ffffff;
+  border: none;
+  box-shadow: 1px 1px 4px #afafaf;
+}
+
+/*Title*/
+.navbar-default .navbar-brand  {
+  color: #3b3b3b;
+}
+
+/*Top navbar right side icons*/
+.nav.navbar-top-links.navbar-right li a{
+  color: #000;
+}
+
+/*Menu Bar on side*/
+.sidebar-nav.navbar-collapse {
+  background: #3b3b3b;
+  margin-top: 0px;
+}
+
+/*Getting rid of mismatching borders*/
+#side-menu li{
+  border: none;
+}
+
+/**/
+.sidebar-nav.navbar-collapse a {
+  color: #fff;
+}
+
+.sidebar-nav.navbar-collapse a.active {
+  color: #fff;
+  background: #262626;
+}
+
+.sidebar-nav.navbar-collapse a.active:hover {
+  color: #fff;
+  background: #fc4e4d;
+}
+
+.sidebar-nav.navbar-collapse a:hover {
+  color: #fff;
+    background: #fb3534 ;
+}
+
+/*Spacing for the primary container of content*/
+#panel-main {
+  padding: 40px;
+  margin-top: 20px;
+  padding: 40px 4.5%;
+}
+
+/*Gets rid off the excess spacing at the bottom of the page*/
+#page-wrapper {
+  min-height: calc(100% - 50px);
+  background: #f5f5f5;
+  border-top: 1px solid #d9d9d9;
+  padding-bottom: 20px;
+}
+
+/*Spacing or the search view*/
+#panel-search {
+  padding: 40px;
+  margin-top: 20px;
+}
+
+/*Mobile*/
+.page-header {
+  margin: 0;
+  margin-top: 10px
+}
+
+/*Mobile*/
+#content-table-container {
+  margin-top: 40px;
+}
+
+/*Mobile*/
+#header-logo img{
+  height: 46px;
+  width: auto;
+}
+
+/*Mobile*/
+#header-logo {
+    padding: 0;
+    margin: 20px 10px 10px 10px;
+}
+
+/*Mobile*/
+.navbar.navbar-default.navbar-static-top {
+  background: #fff;
+}
+
+/*Mobile*/
+.navbar-brand {
+  margin: 0 0 0 30px;
+  padding: 4px 0
+}
+
+/**/
+#add-form-submit {
+  margin: 0;
+}
+
+/*Gives the form some top padding*/
+#add-form {
+  padding: 50px 0;
+}
+
+/*Styling for the add/edit forms input and select fields*/
+#add-form input, select{
+  max-width: 600px;
+  margin: 5px 0;
+}
+
+/*Spacing for each column*/
+#content-table td {
+  line-height: 51.2px;
+  padding-left: 15px;
+}
+
+/*Makes the entire model section clickable*/
+#content-table a{
+  display: block;
+}
+
+/*Resizes delete icon*/
+#add-form-delete i{
+  font-size: 25pt;
+}
+
+/*Generic styling for table headers*/
+.table-header td{
+  background: #f5f5f5;
+  color: #929292;
+}
+
+/*Search view styling*/
+#search_box {
+  height: 50px;
+  margin-top: 25px;
+}
+
+/*Search button styling*/
+#btn-search {
+  height: 50px;
+  margin-top: 25px;
+}
+
+/*Asterix field in input labels*/
+.asteriskField {
+  display: none;
+}
+
+/*prefix for checkboxes added incase bulk actions are to be implemnted*/
+.checkbox-column {
+  width: 30px;
+  padding: 10px 15px !important;
+  text-align: center;
+  display: none;
+}
+
+/*Styling for buttons at the bottom of forms i.e add btn in add vehicle*/
+.form-buttons {
+  display: block;
+  margin-top: 40px;
+}
+
+
+/*media query to handle mobile view changes*/
+@media (min-width: 768.0001px) {
+
+    /*Making the navbar taller to accomadate the logo*/
+    .navbar.navbar-default.navbar-static-top {
+        height: 75px;
+    }
+
+    /*Resizing logo to occupy newly added spacing*/
+    #header-logo img{
+      height: 55px;
+      width: auto;
+    }
+
+    /*Container for logo*/
+    #header-logo {
+        margin: 10px 0 0 30px;
+        padding: 0;
+    }
+
+    /*Logo containers container as per the sb-admin spec*/
+    .navbar-brand {
+      margin: 0 0 0 30px;
+      padding: 4px 0
+    }
+
+    /*targets the misc buttons in the nav bar i.e user and notifications*/
+    .nav.navbar-top-links.navbar-right {
+        margin: 12.5px 0;
+    }
+
+    /*Adjusts margin for the newly resized navbar*/
+    .navbar-default.sidebar {
+        margin-top: 76px;
+    }
+}
+
+
+/* Fixes */
+
+/*Fixes issue where bootstrap makes element transparent */
+#nav-dash {background: #333}
+
+/*Makes navbar and header fixed for desktop view*/
+@media (min-width: 768px) {body {padding-top: 75px}.navbar.navbar-default.navbar-static-top {position: fixed;left: 0;top: 0;width: 100%;}}
+
+/*Fixes extra space added when navbar made fixed*/
+@media (min-width: 768px) {#page-wrapper {padding: 0 30px 150px 30px;}  }

@@ -1,0 +1,33 @@
+body, html {
+  background: #25282e; }
+
+.login-panel.panel.panel-default {
+  border: none;
+  background: #25282e;
+  color: #fff;
+  margin-top: 0; }
+
+.login-panel.panel.panel-default input {
+  background: #3a4149;
+  border: none; }
+
+.checkbox {
+  margin: 20px 0 30px 0; }
+
+.login-panel.panel.panel-default.form-group input {
+  margin: 50px 0;
+  color: #c6c6c6; }
+
+.panel-heading.panel-heading {
+  background: #25282e;
+  border: none; }
+
+img {
+  width: 250px;
+  display: block;
+  margin: 90px auto 20px auto; }
+
+.controls input {
+  color: #c6c6c6; }
+
+/*# sourceMappingURL=login-style.css.map */

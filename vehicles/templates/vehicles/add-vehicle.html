@@ -1,0 +1,55 @@
+{%  extends 'common/base.html' %}
+
+{% block title %}Vehicles{% endblock %}
+
+{% block javascript %}
+  <script>
+    $("#id_model").change(function () {
+        console.log( $(this).val() );
+
+      var form = $(this).closest("form");
+      $.ajax({
+        url: form.attr("data-validate-model-url"),
+        data: form.serialize(),
+        dataType: 'json',
+        success: function (data) {
+          if (data.is_taken) {
+            alert(data.error_message);
+          }
+        }
+      });
+    });
+  </script>
+{% endblock %}
+
+{% block navigation %}{% include 'common/navigation.html' %}{% endblock %}
+
+{% block main_content %}
+
+    <div id="page-wrapper">
+
+        <div class="panel panel-default" id="panel-main">
+
+            <h1 class="page-header">Add New Vehicle</h1>
+
+            {% load crispy_forms_tags %}
+             <form id="add-form" method="post" data-validate-model-url="{% url 'validate_model' %}"> {% csrf_token %}
+                 {{ vehicle_form|crispy }}
+                 <div class="form-buttons">
+                     <input class="btn btn-success" id="add-form-submit" type="submit">
+                     <a class="btn btn-danger" id="go-back" href="/vehicles/">List of Vehicles</a>
+                 </div>
+             </form>
+
+            <div class="alert alert-success alert-dismissable" style="display:{% if status == "pass" %}block{% else %}none{% endif %};">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    Vehicle Added Successfully
+            </div>
+            <div class="alert alert-danger alert-dismissable" style="display:{% if status == "fail" %}block{% else %}none{% endif %};">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    Vehicle was not added
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

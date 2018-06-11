@@ -3,21 +3,28 @@ from django.db import models
 
 # Create your models here.
 class Product(models.Model):
-    Name = models.CharField(max_length=250)
-    Price = models.FloatField()
-    Quantity = models.FloatField()
-    Description = models.CharField(max_length=250)
-    Brand = models.CharField(max_length=250)
     skq = models.CharField(max_length=250)
-    Category = models.ForeignKey('Categories', on_delete=models.CASCADE)
-    Brand = models.ForeignKey('ProductBrands', on_delete=models.CASCADE)
-    Purchases = models.ForeignKey('ProductPurchases', on_delete=models.CASCADE)
+    name = models.CharField(max_length=250)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE)
+    brand = models.ForeignKey('ProductBrand', on_delete=models.CASCADE)
+    purchases = models.ForeignKey('ProductPurchase', on_delete=models.CASCADE)
+    serial = models.CharField(max_length=250)
+    quantity = models.FloatField()
+    unit_cost = models.FloatField()
+    selling_price = models.FloatField()
+    rack_location = models.FloatField()
+    notes = models.CharField(max_length=250)
+    product_is_spare = models.BooleanField
+    description = models.CharField(max_length=250)
+    #hidden boolean
+    active = models.BooleanField();
+
 
     def __str__(self):
-        return self.Name
+        return self.name
 
 
-class ProductPurchases(models.Model):
+class ProductPurchase(models.Model):
     description = models.CharField(max_length=250)
     status = models.IntegerField(1)
 
@@ -25,7 +32,7 @@ class ProductPurchases(models.Model):
         return self.description
 
 
-class Categories(models.Model):
+class Category(models.Model):
     name = models.CharField(max_length=250)
     description = models.CharField(max_length=250)
 
@@ -33,7 +40,7 @@ class Categories(models.Model):
         return self.name
 
 
-class ProductBrands(models.Model):
+class ProductBrand(models.Model):
     name = models.CharField(max_length=250)
 
     def __str__(self):

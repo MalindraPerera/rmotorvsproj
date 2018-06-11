@@ -6,4 +6,4 @@ class VehicleForm(forms.ModelForm):
 
     class Meta:
         model = Vehicle
-        fields = ['model', 'year', 'Brand']
+        exclude = ['active',]

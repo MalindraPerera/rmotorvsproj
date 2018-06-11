@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'vehicles.apps.VehiclesConfig',
     'products.apps.ProductsConfig',
+    'accounts.apps.AccountsConfig',
     'crispy_forms',
 ]
 
@@ -124,3 +125,5 @@ USE_TZ = True
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 STATIC_URL = '/static/'
+
+LOGOUT_REDIRECT_URL = '/accounts/login'
