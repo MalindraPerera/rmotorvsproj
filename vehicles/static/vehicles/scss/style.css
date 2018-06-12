@@ -54,7 +54,6 @@ body {
 
 /*Spacing for the primary container of content*/
 #panel-main {
-  padding: 40px;
   margin-top: 20px;
   padding: 40px 4.5%; }
 
@@ -108,8 +107,7 @@ body {
 
 /*Styling for the add/edit forms input and select fields*/
 #add-form input, select {
-  max-width: 600px;
-  margin: 5px 0; }
+  max-width: 600px; }
 
 /*Spacing for each column*/
 #content-table td {
@@ -122,7 +120,8 @@ body {
 
 /*Resizes delete icon*/
 #add-form-delete i {
-  font-size: 25pt; }
+  font-size: 25pt;
+  color: #e10700; }
 
 /*Generic styling for table headers*/
 .table-header td {
@@ -153,7 +152,27 @@ body {
 /*Styling for buttons at the bottom of forms i.e add btn in add vehicle*/
 .form-buttons {
   display: block;
-  margin-top: 40px; }
+  margin-top: 30px; }
+
+/*Hides edit form*/
+#edit-details-panel {
+  display: none;
+  margin-top: 20px;
+  padding: 40px 4.5%; }
+
+#details-panel {
+  margin-top: 20px;
+  padding: 40px 4.5%; }
+
+#details-panel ul {
+  padding: 0; }
+
+/**/
+#details-panel ul li {
+  list-style: none; }
+
+.vehicle-detail-content p {
+  color: #818181; }
 
 /*media query to handle mobile view changes*/
 @media (min-width: 768.0001px) {
